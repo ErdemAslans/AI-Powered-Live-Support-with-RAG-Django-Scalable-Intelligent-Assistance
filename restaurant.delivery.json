@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "status": "preparing"
+  },
+  {
+    "id": 1,
+    "status": "preparing"
+  },
+  {
+    "id": 17,
+    "status": "on_the_way"
+  },
+  {
+    "id": 18,
+    "status": "preparing"
+  },
+  {
+    "id": 19,
+    "status": "preparing"
+  },
+  {
+    "id": 20,
+    "status": "preparing"
+  },
+  {
+    "id": 21,
+    "status": "preparing"
+  }
+]

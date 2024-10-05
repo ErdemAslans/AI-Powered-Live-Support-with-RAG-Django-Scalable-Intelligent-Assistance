@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": 2,
+      "title": "Hamburger",
+      "slug": "hamburger",
+      "is_active": true,
+      "created_at": "2024-06-19 13:49:36.149327+00:00",
+      "updated_at": "2024-06-19 13:49:36.149327+00:00"
+    },
+    {
+      "id": 5,
+      "title": "Kizartma",
+      "slug": "kzartma",
+      "is_active": true,
+      "created_at": "2024-06-19 13:51:00.131148+00:00",
+      "updated_at": "2024-06-19 17:24:54.981182+00:00"
+    },
+    {
+      "id": 4,
+      "title": "Makarna",
+      "slug": "makarna",
+      "is_active": true,
+      "created_at": "2024-06-19 13:50:47.554271+00:00",
+      "updated_at": "2024-06-19 13:50:47.554271+00:00"
+    },
+    {
+      "id": 3,
+      "title": "Pizza",
+      "slug": "pizza",
+      "is_active": true,
+      "created_at": "2024-06-19 13:50:03.530951+00:00",
+      "updated_at": "2024-06-19 13:50:03.530951+00:00"
+    }
+  ]
+}
