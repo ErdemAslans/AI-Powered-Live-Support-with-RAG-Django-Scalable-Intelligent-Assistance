@@ -44,7 +44,7 @@ This module provides a platform for restaurants to communicate with customers by
 
 The **Menu** module is where the restaurant’s food and beverages are listed and managed. Key features include:
 
-- **Category Management**: Organizes food and beverages into categories, such as “Main Courses,” “Desserts,” and “Drinks.”
+- **Category Management**: Organizes food and beverages into categories, such as “Main Courses,” “Desserts,” and “Drinks."
 - **Food Items**: Each food item includes:
   - **Title**: The name of the dish.
   - **Cover Image**: An image representing the dish.
