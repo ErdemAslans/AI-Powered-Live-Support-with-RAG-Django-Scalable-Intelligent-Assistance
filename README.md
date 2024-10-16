@@ -112,7 +112,7 @@ This module brings advanced AI capabilities to restaurant management, offering d
 
 ### **Technologies**
 
-- **Django Framework**: Powers the web application backend.
+- **Django Framework**: Powers the web application backend
 - **PostgreSQL**: Database management system for handling structured data.
 - **Vision Transformer (ViT)**: Used for image processing and analysis.
 - **RAG (Retrieval-Augmented Generation)**: Provides AI-powered strategic decision-making.
