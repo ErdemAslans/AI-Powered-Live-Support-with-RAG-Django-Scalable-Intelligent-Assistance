@@ -5,7 +5,7 @@ This repository contains the implementation of a restaurant management system wi
 ## **Table of Contents**
 
 1. [Introduction](#introduction)  
-2. [Blog: Managing Posts, Images, and Content](#blog-managing-posts-images-and-content)  
+2. [Blog: Managing Posts, Images, and Content](#blog-managing-posts-images-and-content) 
 3. [Menu: Listing Food and Beverages, Cart, and Order Management](#menu-listing-food-and-beverages-cart-and-order-management)  
 4. [Reviews: User Feedback and Delivery Status Tracking](#reviews-user-feedback-and-delivery-status-tracking)  
 5. [Reservation: Table Booking Management](#reservation-table-booking-management)  
