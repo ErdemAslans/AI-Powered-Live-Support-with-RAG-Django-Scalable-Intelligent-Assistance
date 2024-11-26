@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: url("{% static 'media/arkaplan4.webp' %}") no-repeat center
+          center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+      }
+      .blog-container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+      .blog-item {
+        margin-bottom: 30px;
+      }
+      .blog-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+      .blog-description {
+        margin-top: 15px;
+      }
+      .blog-author {
+        font-size: 0.9em;
+        color: #777;
+        margin-top: 10px;
+      }
+    </style>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% include 'core/navbar.html' %}
+    <div class="container blog-container">
+      <h2>Bloglar ve Yorumlar</h2>
+      <div class="row">
+        {% for blog in blogs %}
+        <div class="col-md-4 blog-item">
+          <img
+            src="{{ blog.cover_image.url }}"
+            alt="{{ blog.title }}"
+            class="img-fluid"
+          />
+          <h3 class="blog-title">{{ blog.title }}</h3>
+          <p class="blog-description">
+            {{ blog.description|truncatewords:30 }}
+          </p>
+          <a
+            href="{% url 'blog:blog_detail' blog_slug=blog.slug %}"
+            class="btn btn-dark"
+            >İncele</a
+          >
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

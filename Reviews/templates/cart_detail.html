@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% include 'core/navbar.html' %}
+    <div class="container mt-5">
+      <div class="cart-container">
+        <h2>Sepetim</h2>
+        <table class="table table-bordered cart-table">
+          <thead>
+            <tr>
+              {% if cart_items %}
+              <th>Ürün</th>
+              <th>Adet</th>
+              <th>Fiyat</th>
+              <th>Toplam</th>
+              <th>İşlem</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart_items %}
+            <tr>
+              <td>{{ item.food.title }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.food.price }}₺</td>
+              <td>{{ item.total_price }}₺</td>
+              <td>
+                <a
+                  href="{% url 'reviews:remove_from_cart' item_id=item.id %}"
+                  class="btn btn-danger"
+                  >Kaldır</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="cart-total mr-2">Toplam: {{ total_price }}₺</div>
+        <div class="mt-3">
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="allergies">Alerjen Bilgileri</label>
+              <textarea
+                id="allergies"
+                name="allergies"
+                class="form-control"
+                rows="3"
+                placeholder="Lütfen alerjen bilgilerini buraya girin."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Satın Al</button>
+            <a href="{% url 'reviews:delivery_status'%}" class="btn btn-dark"
+              >Siparişlerim</a
+            >
+          </form>
+        </div>
+        {% else %}
+        <div class="empty-cart">
+          <p>Sepetiniz boş.</p>
+          <a href="{% url 'home_view' %}" class="btn btn-primary"
+            >Alışverişe Devam Et</a
+          >
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

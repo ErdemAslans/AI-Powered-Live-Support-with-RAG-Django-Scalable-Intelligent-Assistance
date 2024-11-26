@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <style>
+      .img-box img {
+        max-height: 300px; /* Resimlerin yüksekliğini sınırlayın */
+        object-fit: cover; /* Resimlerin düzgün görünmesini sağlayın */
+        width: 100%;
+      }
+      footer {
+        position: relative;
+        z-index: 1; /* Footer'ın önde olmasını sağlayın */
+      }
+      .offer_container {
+        position: relative;
+        z-index: 0; /* Resimlerin altında olmasını sağlayın */
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'core/navbar.html' %}
+    <div class="container mt-5">
+      <iframe
+        src="https://d46fa7eff55fbe5d0f.gradio.live"
+        width="100%"
+        height="600px"
+      ></iframe>
+    </div>
+    {% include 'core/footer.html' %}
+  </body>
+</html>

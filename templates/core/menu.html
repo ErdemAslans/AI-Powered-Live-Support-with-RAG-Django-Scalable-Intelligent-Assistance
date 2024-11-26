@@ -1,0 +1,91 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+
+  {% include 'core/navbar.html' %}
+  <!-- food section -->
+  <div id="alert-container"></div>
+  <div id="alert-container"></div>
+  {% include 'core/messages.html' %}
+  <section class="food_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Menümüz</h2>
+      </div>
+
+      <ul class="filters_menu">
+        <li class="active" data-filter="*">Hepsi</li>
+        <li data-filter="burger"><a href="{% url 'reviews:category_detail' category_slug='hamburger' %}">Hamburgerler</a>
+        </li>
+        <li data-filter="pizza"><a href="{% url 'reviews:category_detail' category_slug='pizza' %}">Pizzalar</a>
+        </li>
+        <li data-filter="pasta"><a href="{% url 'reviews:category_detail' category_slug='makarna' %}">Makarnalar</a>
+        </li>
+        <li data-filter="fries"><a href="{% url 'reviews:category_detail' category_slug='kzartma' %}">Kızartmalar</a>
+        </li>
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+          {% for food in foods %}
+          <div class="col-sm-6 col-lg-4 all">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img
+                    src="{{ food.cover_image.url }}"
+                  />
+                </div>
+                <div class="detail-box">
+                  <h5>{{ food.title }}</h5>
+                  <p>{{ food.description|truncatechars:110 }}</p>
+                  <div class="options">
+                    <h6>{{ food.price }}₺</h6>
+                    <a href="{% url 'reviews:food_detail' category_slug=food.category.slug food_slug=food.slug %}"></a>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href=""> Daha fazla... </a>
+      </div>
+    </div>
+  </section>
+
+
+  {% include 'core/footer.html' %}
+</html>
+
+  <!-- end food section -->

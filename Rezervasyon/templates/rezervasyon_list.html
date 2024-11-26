@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: url("{% static 'media/arkaplan4.webp' %}") no-repeat center
+          center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+      }
+      .reservation-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+      }
+      .reservation-item {
+        background: #f8f9fa;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .reservation-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+      }
+      .reservation-details {
+        font-size: 0.9em;
+        color: #555;
+      }
+      .reservation-time {
+        color: #007bff;
+        font-weight: bold;
+      }
+    </style>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% include 'core/navbar.html' %}
+    <div class="container reservation-container">
+      <h2 class="mb-4">Rezervasyonlarım</h2>
+      <a
+        href="{% url 'rezervasyon:create_rezervasyon' %}"
+        class="btn btn-dark mb-3"
+        >Yeni Rezervasyon Yap</a
+      >
+      {% for reservation in reservations %}
+      <div class="reservation-item">
+        <div class="reservation-title">
+          Masa Numarası: {{ reservation.table_number }}
+        </div>
+        <div class="reservation-details">
+          Rezervasyon Zamanı:
+          <span class="reservation-time"
+            >{{ reservation.reservation_time }}</span
+          ><br />
+          Telefon Numarası: {{ reservation.phone_number }}<br />
+          İsim: {{ reservation.user.username }}<br />
+          Aktif mi: {{ reservation.is_active }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

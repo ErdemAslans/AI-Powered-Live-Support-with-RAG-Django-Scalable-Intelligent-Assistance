@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Hamburger",
+    "slug": "hamburger",
+    "is_active": true
+  },
+  {
+    "title": "Kizartma",
+    "slug": "kzartma",
+    "is_active": true
+  },
+  {
+    "title": "Makarna",
+    "slug": "makarna",
+    "is_active": true
+  },
+  {
+    "title": "Pizza",
+    "slug": "pizza",
+    "is_active": true
+  }
+]

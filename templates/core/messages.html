@@ -1,0 +1,12 @@
+{% if messages %}
+<div id="message-box" class="message-box">
+  <div class="message-content">
+    <ul class="messages">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </ul>
+    <button id="close-btn" class="close-btn">&times;</button>
+  </div>
+</div>
+{% endif %}

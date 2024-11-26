@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <title>Evia</title>
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% include 'core/navbar.html' %}
+    <div class="container mt-5">
+      <div class="row m-auto">
+        <img
+          src="{{ food.cover_image.url }}"
+          alt="{{ food.title }}"
+          style="width: 33%"
+        />
+        <div class="col">
+          <h1>{{ food.title }}</h1>
+          <p class="mt-5">{{ food.description|safe }}</p>
+          <h2>Price: {{ food.price }}₺</h2>
+          <a
+            href="{% url 'reviews:add_to_cart' food_id=food.id %}"
+            class="btn btn-primary"
+            >Sepete Ekle</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
